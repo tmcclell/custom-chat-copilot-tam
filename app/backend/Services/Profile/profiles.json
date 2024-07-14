@@ -7,17 +7,17 @@
     "SecurityModelGroupMembership": [ "LocalDevUser" ],
     "SampleQuestions": [
       "Calculate the SCI value of the attached architecuture",
-      "",
-      ""
+      "Can you provide recommendations to reduce the SCI value of the attached architecture?",
+      "Please recalculate the SCI value of the attached architecture with the following recommendations applied."
     ],
     "RAGSettings": {
       "GenerateSearchQueryPluginName": "GenerateSearchQuery",
       "GenerateSearchQueryPluginQueryFunctionName": "GenerateSearchQuery",
       "DocumentRetrievalPluginName": "DocumentRetrieval",
-      "DocumentRetrievalPluginQueryFunctionName": "KwiecienV2",
-      "DocumentRetrievalIndexName": "azureblob-index_v1",
+      "DocumentRetrievalPluginQueryFunctionName": "AISearchV2",
+      "DocumentRetrievalIndexName": "vector-1720716371948",
       "ChatSystemMessageFile": "RAGChatSystemPrompt",
-      "StorageContianer": "manuals-auto"
+      "StorageContianer": "emissions"
     }
   },
   {
@@ -39,7 +39,8 @@
     "ChatSystemMessageFile": "RAGChatSystemPrompt",
     "SampleQuestions": [
       "Calculate emissions using the SCI standard for the attached architecture.",
-      ""
+      "Can you provide recommendations to reduce the SCI value of the attached architecture?",
+      "Please recalculate the SCI value of the attached architecture with the following recommendations applied."
     ]
   }
 ]
