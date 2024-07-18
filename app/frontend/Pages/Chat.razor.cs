@@ -232,9 +232,9 @@ public sealed partial class Chat
         if (!AppConfiguration.ShowFileUploadSelection || !string.IsNullOrEmpty(_imageUrl))
             _showDocumentUpload = false;
 
-        if (_selectedProfileSummary.Approach != ProfileApproach.Chat || !string.IsNullOrEmpty(_selectedDocument))
-        {
-            _showPictureUpload = false;
-        }
+        // if (_selectedProfileSummary.Approach != ProfileApproach.Chat || !string.IsNullOrEmpty(_selectedDocument))
+        // {
+        //     _showPictureUpload = false;
+        // }
     }
 }

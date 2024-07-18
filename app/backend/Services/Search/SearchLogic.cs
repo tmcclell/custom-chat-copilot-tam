@@ -60,16 +60,34 @@ public class SearchLogic<T> where T : IKnowledgeSource
         }
 
         // Perform the search and build the results
-        var response = await _searchClient.SearchAsync<T>(query, searchOptions);
-        var list = new List<T>();
-        foreach (var result in response.Value.GetResults())
+        try
         {
-            list.Add(result.Document);
-        }
+            var response = await _searchClient.SearchAsync<T>(query, searchOptions);
+            var list = new List<T>();
+            // foreach (var result in response.Value.GetResults())
+            // {
+            //     list.Add(result.Document);
+            // }
 
-        /// Filter the results by the maximum request token size
-        var sourceSummary = FilterByMaxRequestTokenSize(list, DefaultSettings.MaxRequestTokens);
-        return sourceSummary;
+            // Filter the results by the maximum request token size
+            var sourceSummary = FilterByMaxRequestTokenSize(list, DefaultSettings.MaxRequestTokens);
+            return sourceSummary;
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception gracefully
+            Debug.WriteLine($"An error occurred during the search: {ex.Message}");
+            return null; // Or handle the error in an appropriate way for your application
+        }
+        // var list = new List<T>();
+        // foreach (var result in response.Value.GetResults())
+        // {
+        //     list.Add(result.Document);
+        // }
+
+        // /// Filter the results by the maximum request token size
+        // var sourceSummary = FilterByMaxRequestTokenSize(list, DefaultSettings.MaxRequestTokens);
+        // return sourceSummary;
     }
 
     private KnowledgeSourceSummary FilterByMaxRequestTokenSize(IReadOnlyList<T> sources, int maxRequestTokens)
