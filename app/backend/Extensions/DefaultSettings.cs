@@ -9,7 +9,7 @@ public static class DefaultSettings
     {
         ExtensionData = new Dictionary<string, object>()
         {
-            { "max_tokens", 100 },
+            { "max_tokens", 200 },
             { "temperature", 0.0 },
             { "top_p", 1 }
         }
@@ -18,7 +18,7 @@ public static class DefaultSettings
     { 
         ExtensionData = new Dictionary<string, object>()
         {
-            { "max_tokens", 1024 },
+            { "max_tokens", 2048 },
             { "temperature", 0.0 },
             { "top_p", 1 },
         }
