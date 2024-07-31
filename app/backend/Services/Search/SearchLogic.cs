@@ -64,10 +64,10 @@ public class SearchLogic<T> where T : IKnowledgeSource
         {
             var response = await _searchClient.SearchAsync<T>(query, searchOptions);
             var list = new List<T>();
-            foreach (var result in response.Value.GetResults())
-            {
-                list.Add(result.Document);
-            }
+            // foreach (var result in response.Value.GetResults())
+            // {
+            //     list.Add(result.Document);
+            // }
 
             // Filter the results by the maximum request token size
             var sourceSummary = FilterByMaxRequestTokenSize(list, DefaultSettings.MaxRequestTokens);
